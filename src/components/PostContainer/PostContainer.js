@@ -15,7 +15,16 @@ const PostContainer = (props) => {
                     <p>{props.postData.likes} Likes</p>
                 </div>
                 {props.postData.comments.map((x, i)=> <CommentSection comment={x} key={i} />)}
-                <input type="text" placeholder="Add a comment..." />
+                <form onSubmit={(e) => props.addComment(e, props.postData)} >
+                    <input 
+                        type="text" 
+                        placeholder="Add a comment..." 
+                        name="inputText" 
+                        value={props.inputText}
+                        onChange={props.handleChange} 
+                        
+                    />
+                </form>
             </div>
         </div>
     );
