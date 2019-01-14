@@ -1,0 +1,23 @@
+.SearchBar {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Sacramento', cursive;
+}
+
+.SearchBar .search-bar-left {
+    margin: 10px;
+    font-size: 2rem;
+}
+
+.SearchBar .search-bar-input {
+    margin: 10px;
+    font-size: 2rem;
+}
+
+.SearchBar .icons {
+    margin: 10px;
+}
+
+.SearchBar .icons i{
+    margin: 10px;
+}

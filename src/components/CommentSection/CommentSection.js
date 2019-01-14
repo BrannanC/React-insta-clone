@@ -1,8 +1,14 @@
 import React from 'react';
 
-const CommentSection = () => {
+const CommentSection = (props) => {
     return (
-        <div className="PostContainer">CommentSection</div>
+        <div className="Comment">
+            <p>
+                <span className="username">{props.comment.username} </span>
+                <span className="comment-text">{props.comment.text}</span>
+            </p>
+
+        </div>
     );
 }
 
