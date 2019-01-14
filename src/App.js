@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
+
+import SearchBar from './components/SearchBar/SearchBar';
+import PostContainer from './components/PostContainer/PostContainer';
+import CommentSection from './components/CommentSection/CommentSection';
+
+import './components/SearchBar/SearchBar.css';
+import './components/PostContainer/PostContainer.css';
+import './components/CommentSection/CommentSection.css';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-
-        </header>
+        <SearchBar />
+        <PostContainer />
+        <CommentSection />
       </div>
     );
   }
