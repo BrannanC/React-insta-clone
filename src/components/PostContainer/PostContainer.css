@@ -1,0 +1,34 @@
+.PostContainer {
+    border: 1px solid lightgray;
+    max-width: 640px;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.PostContainer .user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.PostContainer .user img {
+    border-radius: 50%;
+    padding: 10px;
+    max-width: 40px;
+    height: auto;
+}
+
+.PostContainer .user .username {
+    font-weight: bold;
+}
+
+.PostContainer .user .timestamp {
+    color: gray;
+}
+
+.PostContainer .postImage {
+    max-width: 100%;
+    height: auto;
+}
