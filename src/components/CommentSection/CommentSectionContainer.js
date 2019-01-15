@@ -30,16 +30,21 @@ class CommentSectionContainer extends React.Component {
           this.setState({
               comments, 
               comment: ''
-          })
-      
+          })      
       }
+
+    incrementLikes = () => {
+        this.setState(prevState => ({
+            likes: ++prevState.likes
+        }))
+    }
 
     render() {
         return (
             <div className="CommentSection">
-                            <div className="likes">
+                <div className="likes">
                     <div className="icons">
-                        <i className="far fa-2x fa-heart"></i>
+                        <i className="far fa-2x fa-heart" onClick={this.incrementLikes}></i>
                         <i className="far  fa-2x fa-comment"></i>
                     </div>
                     <p>{this.state.likes} Likes</p>

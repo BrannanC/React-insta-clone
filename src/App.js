@@ -13,8 +13,14 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      pageData: dummyData,
+      pageData: [],
     }
+  }
+
+  componentDidMount(){
+    this.setState({
+      pageData: dummyData
+    })
   }
 
   render() {
