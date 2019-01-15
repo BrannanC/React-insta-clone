@@ -14,6 +14,7 @@ class App extends Component {
     super();
     this.state = {
       pageData: [],
+      filteredPosts: []
     }
   }
 
@@ -23,14 +24,27 @@ class App extends Component {
     })
   }
 
+  handleSearch = (e) => {
+    const posts = this.state.pageData.filter(x => {
+      if(x.username.includes(e.target.value)){
+        return x
+      }
+    })
+    this.setState({
+      filteredPosts: posts
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <SearchBar />
-        {this.state.pageData.map(x => <PostContainer 
-          postData={x} 
-          key={`${x.username}${x.timestamp}` }
-        />)}
+        <SearchBar handleSearch={this.handleSearch} />
+        <PostContainer 
+          pageData={this.state.filteredPosts.length > 0
+          ? this.state.filteredPosts
+          : this.state.pageData
+        } 
+        />
       </div>
     );
   }
