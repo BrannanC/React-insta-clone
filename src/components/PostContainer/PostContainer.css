@@ -32,3 +32,10 @@
     max-width: 100%;
     height: auto;
 }
+
+@media (max-width: 900px){
+    .PostContainer .postImage img {
+        width: 100%;
+        height: auto;
+    }
+}

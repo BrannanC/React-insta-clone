@@ -21,3 +21,11 @@
 .SearchBar .icons i{
     margin: 10px;
 }
+
+@media (max-width: 955px) {
+    .SearchBar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

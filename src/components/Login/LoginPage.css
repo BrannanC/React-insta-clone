@@ -1,0 +1,53 @@
+.LoginPage {
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    max-height: 70vh;
+}
+
+.LoginPage img {
+    width: 50%;
+    height: auto;
+    padding: 0 40px;
+}
+
+.LoginForm {
+    width: 50%;
+    border: 1px solid grey;
+}
+
+.LoginForm h1 .instagram{
+    font-family: 'Sacramento', cursive;
+}
+
+.LoginForm form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LoginForm form input {
+    width: 50%;
+    font-size: 2rem;
+    margin: 15px;
+}
+
+.LoginForm form button {
+    width: 50%;
+    font-size: 2rem;
+    margin: 15px;
+}
+
+@media (max-width: 800px){
+    .LoginPage img {
+        display: none;
+    }
+
+    .LoginForm form input {
+        width: 50%;
+        font-size: 1.5rem;
+        margin: 15px;
+    }
+}
