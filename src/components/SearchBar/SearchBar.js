@@ -10,6 +10,7 @@ const SearchBar = (props) => {
                 <i className="fas fa-2x fa-asterisk"></i>
                 <i className="far fa-2x fa-heart"></i>
                 <i className="fas fa-2x fa-user-alt"></i>
+                <button onClick={props.handleLogout}>Logout</button>
             </div>
         </div>
     );

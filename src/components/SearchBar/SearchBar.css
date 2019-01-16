@@ -17,3 +17,7 @@
 .SearchBar .icons {
     margin: 10px;
 }
+
+.SearchBar .icons i{
+    margin: 10px;
+}

@@ -9,7 +9,8 @@ const Post = (props) => {
             <div className="postImage"><img src={props.postData.imageUrl} alt="Post" /></div>
 
 
-                <CommentSectionContainer comments={props.postData.comments} likes={props.postData.likes} />
+                <CommentSectionContainer comments={props.postData.comments} likes={props.postData.likes} 
+                username={props.username} />
 
         </div>
     );

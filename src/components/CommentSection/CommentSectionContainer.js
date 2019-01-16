@@ -9,7 +9,9 @@ class CommentSectionContainer extends React.Component {
         this.state = {
           comments: props.comments,
           comment: '',
-          likes: props.likes
+          likes: props.likes,
+          username: props.username,
+          isLiked: false
         };
       }
 
@@ -23,7 +25,7 @@ class CommentSectionContainer extends React.Component {
           e.preventDefault();
           const newComment = {
             text: this.state.comment,
-            username: 'Test Name'
+            username: this.state.username
           };
           const comments = this.state.comments.slice();
           comments.push(newComment);
@@ -35,7 +37,8 @@ class CommentSectionContainer extends React.Component {
 
     incrementLikes = () => {
         this.setState(prevState => ({
-            likes: ++prevState.likes
+            likes: prevState.isLiked ? --prevState.likes : ++prevState.likes,
+            isLiked: !prevState.isLiked
         }))
     }
 
@@ -54,21 +57,14 @@ class CommentSectionContainer extends React.Component {
               comment={this.state.comment}
               commentSubmit={this.commentSubmit}
               commentChange={this.commentChange}
-            //   submitComment={this.handleCommentSubmit}
-            //   changeComment={this.commentHandler}
             />
           </div>
         );
     }
 }
 
-
-// CommentSectionContainer.propTypes = {
-//     comment: PropType.shape({
-//         username: PropType.string.isRequired,
-//         text: PropType.string.isRequired
-//     })
-
-// }
+CommentSectionContainer.propTypes = {
+    comments: PropType.arrayOf(PropType.object)
+}
 
 export default CommentSectionContainer;

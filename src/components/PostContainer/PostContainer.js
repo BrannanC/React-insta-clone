@@ -6,6 +6,7 @@ const PostContainer = (props) => {
     return (
         <div>
             {props.pageData.map(x => <Post
+            username={props.username}
           postData={x} 
           key={`${x.username}${x.timestamp}` }
         />)}
@@ -14,14 +15,7 @@ const PostContainer = (props) => {
 }
 
 PostContainer.propTypes = {
-    postData: PropType.shape({
-        username: PropType.string,
-        thumbnailUrl: PropType.string,
-        imageUrl: PropType.string,
-        likes: PropType.number,
-        timestamp: PropType.string,
-        comments: PropType.array
-    }),
+    pageData: PropType.array.isRequired
 }
 
 export default PostContainer;

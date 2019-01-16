@@ -1,53 +1,38 @@
 import React, { Component } from 'react';
 
-import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostContainer/PostContainer';
-import dummyData from './dummy-data';
-
-import './components/SearchBar/SearchBar.css';
-import './components/PostContainer/PostContainer.css';
-import './components/CommentSection/CommentSection.css';
-import './App.css';
+import PostPage from './components/PostContainer/PostPage';
+import LoginPage from './components/Login/LoginPage';
+import authenticate from './components/authenication/authenticate';
 
 class App extends Component {
   constructor(){
     super();
-    this.state = {
-      pageData: [],
-      filteredPosts: []
+    this.state ={
+
     }
-  }
+}
 
-  componentDidMount(){
-    this.setState({
-      pageData: dummyData
-    })
-  }
+componentDidMount(){
+  window.localStorage.setItem('username', '')
+}
 
-  handleSearch = (e) => {
-    const posts = this.state.pageData.filter(x => {
-      if(x.username.includes(e.target.value)){
-        return x
-      }
-    })
+handleChange = (e) => {
     this.setState({
-      filteredPosts: posts
+        [e.target.name]: e.target.value
     })
-  }
+}
+
+handleLogin = () => {
+    window.localStorage.setItem('username', this.state.username);
+}
 
   render() {
     return (
       <div className="App">
-        <SearchBar handleSearch={this.handleSearch} />
-        <PostContainer 
-          pageData={this.state.filteredPosts.length > 0
-          ? this.state.filteredPosts
-          : this.state.pageData
-        } 
-        />
+        <PostPage />
       </div>
     );
   }
 }
 
-export default App;
+export default authenticate(App)(LoginPage);
