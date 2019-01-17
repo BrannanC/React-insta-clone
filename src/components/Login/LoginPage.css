@@ -18,8 +18,13 @@
     border: 1px solid grey;
 }
 
-.LoginForm h1 .instagram{
+.LoginForm .instagram{
+    font-size: 4rem;
     font-family: 'Sacramento', cursive;
+}
+
+.LoginForm h3 {
+    font-weight: 300;
 }
 
 .LoginForm form {
