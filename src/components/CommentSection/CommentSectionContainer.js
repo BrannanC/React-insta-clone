@@ -1,7 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import Comment from './Comment';
 import CommentInput from './CommentInupt';
 import PropType from 'prop-types';
+
+const CommentSectionDiv = styled.div`
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+`;
+
+const Icon = styled.i`
+    margin-right: 10px;
+`;
 
 class CommentSectionContainer extends React.Component {
     constructor(props) {
@@ -44,11 +57,11 @@ class CommentSectionContainer extends React.Component {
 
     render() {
         return (
-            <div className="CommentSection">
+            <CommentSectionDiv>
                 <div className="likes">
                     <div className="icons">
-                        <i className="far fa-2x fa-heart" onClick={this.incrementLikes}></i>
-                        <i className="far  fa-2x fa-comment"></i>
+                        <Icon className="far fa-2x fa-heart" onClick={this.incrementLikes}></Icon>
+                        <Icon className="far  fa-2x fa-comment"></Icon>
                     </div>
                     <p>{this.state.likes} Likes</p>
                 </div>
@@ -58,7 +71,7 @@ class CommentSectionContainer extends React.Component {
               commentSubmit={this.commentSubmit}
               commentChange={this.commentChange}
             />
-          </div>
+          </CommentSectionDiv>
         );
     }
 }

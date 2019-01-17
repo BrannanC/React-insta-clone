@@ -4,11 +4,11 @@ import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from './PostContainer';
 import dummyData from '../../dummy-data';
 
-import '../SearchBar/SearchBar.css';
-import './PostContainer.css';
 import '../CommentSection/CommentSection.css';
 import '../../App.css';
 import '../Login/LoginPage.css';
+
+
 
 class PostPage extends Component {
   constructor(){

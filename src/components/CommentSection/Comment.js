@@ -1,12 +1,21 @@
 import React from 'react';
 import PropType from 'prop-types';
+import styled from 'styled-components';
+
+const Username = styled.span`
+    font-weight: bold;
+`;
+
+const CommentText = styled.span`
+
+`;
 
 const Comment = props => {
     return (
         <div className="Comment">
         <p>
-            <span className="username">{props.comment.username} </span>
-            <span className="comment-text">{props.comment.text}</span>
+            <Username>{props.comment.username} </Username>
+            <CommentText>{props.comment.text}</CommentText>
         </p>
         </div>
     );
