@@ -4,9 +4,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from './PostContainer';
 import dummyData from '../../dummy-data';
 
-import '../CommentSection/CommentSection.css';
 import '../../App.css';
-import '../Login/LoginPage.css';
 
 
 
