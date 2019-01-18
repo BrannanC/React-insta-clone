@@ -71,7 +71,7 @@ class LoginPage extends React.Component {
     render(){
         return (
             <LoginPageDiv>
-            <LoginImg src="https://cdn.pixabay.com/photo/2013/07/13/12/46/iphone-160307_1280.png" />
+                <LoginImg src="https://i.imgur.com/i9VFRdx.png" />
                 <LoginRightSide>
                     <InstaFont>Instagram</InstaFont>
                     <StyledH3>Sign up to feel real bad about yourself and waste some time</StyledH3>
