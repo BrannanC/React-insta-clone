@@ -1,16 +1,38 @@
 import React, { Component } from 'react';
-import './App.css';
+
+import PostPage from './components/PostContainer/PostPage';
+import LoginPage from './components/Login/LoginPage';
+import authenticate from './components/authenication/authenticate';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state ={
+
+    }
+}
+
+componentDidMount(){
+  window.localStorage.setItem('username', '')
+}
+
+handleChange = (e) => {
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+}
+
+handleLogin = () => {
+    window.localStorage.setItem('username', this.state.username);
+}
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-
-        </header>
+        <PostPage />
       </div>
     );
   }
 }
 
-export default App;
+export default authenticate(App)(LoginPage);
